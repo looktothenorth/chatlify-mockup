@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Target Keyword for SEO: 'Chat Messages', 'Chatlify' -->
+    <title>Chatlify | Chat Messages from the past, today!</title>
+    <meta name="description" content="Chat Messages brought to you by Chatlify, the leader in serving static chat templates.">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Top level containerization for modularity -->
+    <div class="chat-message-container">
+
+        <div class="title-bar">
+            <!-- This is an h2 as I imagine this is a subsection of another page with an existing h1 -->
+            <h2>CHAT TRANSCRIPT</h2>
+            <span class="date"></span>
+        </div>
+
+        <hr />
+
+        <!-- Entrypoint for instantiated templates -->
+        <div id="chat-messages"></div>
+
+    </div>
+
+    <!-- Chatbox template -->
+    <template id="chat-messages-template">
+        <div class="chat-message">
+            <img class="avatar" />
+            <div class="chat-message-box">
+                <span class="message"></span>
+                <div class="details-row">
+                    <strong class="author"></strong>
+                    <span class="time-container">
+                        <img class="clock-icon" src="clock.svg" alt="Clock" />
+                        <strong class="time"></strong>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

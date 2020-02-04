@@ -1,0 +1,130 @@
+/* CSS separated into logically separated horizontal rows
+   Most of this is pulled directly from data in the mockup */
+
+/* Font imports from google font api. Imports multiple.*/
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed&display=swap');
+
+/*===CHAT CONTAINER===*/
+.chat-message-container {
+    padding: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16pt;
+}
+
+/* ===TITLE BAR ROW=== */
+.title-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+hr {
+    height: 2px;
+    background-color: #eeeeee;
+    border: none;
+}
+
+.title-bar h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.2em; /* em used here because we want the spacing to scale with font size*/
+    font-size: 18pt;
+}
+
+.date {
+    color: #9a9a9a;
+    margin-left: auto;
+    font-size: 18pt;
+}
+
+/*===CHAT MESSAGE===*/
+.chat-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.alternate {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    /* Fixed pixel margins so on resizing arrow still points to middle of avatar */
+    margin-top: 45px;
+    margin-right: 50px;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.alternate .avatar {
+    margin-left: 50px;
+    margin-right: 0px;
+}
+.chat-message-box {
+    background-color: #f3f3f3;
+    padding: 24px;
+    margin-top: 36px;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.focused .chat-message-box {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 50px 15px rgba(0,0,0,0.13);
+}
+
+/* Attach left pointing arrow to non-alternate message */
+/* Background-color inherited to support 'focused' class */
+.chat-message-box:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -14px;
+    top: 35px;
+    clip-path: polygon(0 50%, 50% 0, 50% 100%);
+    background-color: inherit;
+}
+
+/* Reset left pointing arrow for cascading style*/
+.alternate .chat-message-box:before {
+    all: initial;
+}
+
+/* Attach right pointing arrow to 'alternate' message */
+/* Background-color inherited to support 'focused' class */
+.alternate .chat-message-box:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 35px;
+    right: -14px;
+    background-color: inherit;
+    clip-path: polygon(100% 50%, 50% 0, 50% 100%);
+}
+
+
+/*===DETAILS ROW===*/
+.details-row {
+    margin-top: 24px;
+}
+.author {
+    color: #ff5d5d;
+}
+
+.alternate .author {
+    color: #5da2ff;
+}
+.clock-icon {
+    height: 1em;
+    margin-bottom: -.1em;
+}
+
+.time-container {
+    margin-left: 24px;
+    font-size: 12px;
+}
